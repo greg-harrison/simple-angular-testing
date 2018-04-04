@@ -11,13 +11,15 @@ import { ItemComponent } from './item/item.component';
 //Services
 import { LoggerService } from './logger.service';
 import { ItemService } from './item.service';
+import { ItemListComponent } from './item-list/item-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ItemComponent
+    ItemComponent,
+    ItemListComponent
   ],
   imports: [
     BrowserModule
