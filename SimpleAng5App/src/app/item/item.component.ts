@@ -1,19 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { ItemService } from '../item.service';
+import { Component, Input } from '@angular/core';
+
+interface Item {
+  title: string,
+  description: string
+}
 
 @Component({
   selector: 'app-item',
-  templateUrl: './item.component.html',
+  template: `
+    <div>
+      {{item.title}}
+      {{item.description}}
+    </div>
+  `,
   styleUrls: ['./item.component.css'],
-  providers: [ItemService]
 })
-export class ItemComponent implements OnInit {
-  items: Items[]
-
-  constructor(private service: ItemService) { }
-
-  ngOnInit() {
-    this.items = this.service.getItems()
-  }
-
+export class ItemComponent {
+  @Input() item: Item[];
 }
